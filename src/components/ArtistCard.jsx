@@ -1,4 +1,17 @@
-export const ArtistCard = ({artists}) => {
+import { useState, useEffect, useContext } from 'react';
+import { TokenContext } from '../providers';
+import { getTopArtists } from '../services';
+
+export const ArtistCard = () => {
+
+	const token = useContext(TokenContext);
+	const [artists, setArtists] = useState([]);
+
+	useEffect(() => {
+		if (token) {
+			getTopArtists(token).then((artists) => setArtists(artists));
+		}
+	}, [token]);
 	
     return (
 		<>

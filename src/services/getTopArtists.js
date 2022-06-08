@@ -11,7 +11,7 @@ export const getTopArtists = async (token) => {
         }
     });
 
-    const arrayArtists = data.items.map((artist) => {
+    const artistsArray = data.items.map((artist) => {
         return {
             name: artist.name,
             genres: artist.genres,
@@ -20,5 +20,5 @@ export const getTopArtists = async (token) => {
         }
     });
 
-    return arrayArtists;
+    return artistsArray;
 }
