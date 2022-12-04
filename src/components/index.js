@@ -1,4 +1,3 @@
-export * from "./ArtistCard.jsx";
 export * from "./ContentContainer.jsx";
 export * from "./Navigation.jsx";
 export * from "./NoContent.jsx";

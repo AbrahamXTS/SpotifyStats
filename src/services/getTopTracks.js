@@ -18,6 +18,8 @@ export const getTopTracks = async (token) => {
             image: track.album.images[0].url,
             link: track.external_urls.spotify,
             name: track.name,
+			preview: track.preview_url,
+			uri: track.uri
         }
     });
 
