@@ -1,8 +1,9 @@
 import { useContext, useEffect, useState } from 'react';
 import SpotifyPlayer from 'react-spotify-web-playback';
+
 import { TrackCard } from '../components';
-import { TokenContext } from '../providers';
 import { getTopTracks } from '../services';
+import { TokenContext } from '../providers';
 
 export const SelectService = () => {
 
@@ -28,7 +29,17 @@ export const SelectService = () => {
 	}, []);
 
 	const handleKeyDown = (e) => {
-		console.log("Tecla puchada", e.key);
+		if (e.keyCode === 49) {
+			try {
+				document.querySelector('[aria-label="Previous"]')?.click();
+			} catch (e) {
+				console.log("No se pudo encontrar el botón de retroceder.");
+			}
+		}
+
+		if (e.keyCode === 50) {
+			document.querySelector('[aria-label="Next"]').click();
+		}
 	};
 
 	return (
