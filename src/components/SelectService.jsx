@@ -12,6 +12,8 @@ export const SelectService = () => {
 	const [tracks, setTracks] = useState([]);
 	const [uris, setUris] = useState([]);
 
+	console.log(token);
+
 	useEffect(() => {
 		if (token) {
 			getTopTracks(token).then((tracks) => setTracks(tracks));
@@ -20,7 +22,7 @@ export const SelectService = () => {
 
 	useEffect(() => {
 		if (tracks.length > 0) {
-			setUris(tracks.map(({uri}) => uri));
+			setUris(["spotify:track:25Jf61edvM78rQHYaWRiIL"].concat(tracks.map(({uri}) => uri)));
 		}
 	}, [tracks]);
 
@@ -30,15 +32,15 @@ export const SelectService = () => {
 
 	const handleKeyDown = (e) => {
 		if (e.keyCode === 49) {
-			try {
-				document.querySelector('[aria-label="Previous"]')?.click();
-			} catch (e) {
-				console.log("No se pudo encontrar el botón de retroceder.");
-			}
+			document.querySelector('[aria-label="Previous"]')?.click();
 		}
 
 		if (e.keyCode === 50) {
 			document.querySelector('[aria-label="Next"]').click();
+		}
+
+		if (e.keyCode === 51) {
+			document.querySelector('[aria-label="Pause"]').click();
 		}
 	};
 
