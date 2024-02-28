@@ -2,12 +2,10 @@ import React, { useState, useEffect, createContext } from "react";
 
 export const TokenContext = createContext();
 
-export const TokenProvider = ({children}) => {
-
+export const TokenProvider = ({ children }) => {
 	const [tokenUser, setTokenUser] = useState("");
 
 	useEffect(() => {
-		
 		let token = undefined;
 		const hash = window.location.hash;
 
@@ -21,12 +19,7 @@ export const TokenProvider = ({children}) => {
 			setTokenUser(token);
 			window.location.hash = "";
 		}
-
 	}, []);
 
-	return (
-		<TokenContext.Provider value={tokenUser}>
-			{children}
-		</TokenContext.Provider>
-	);
+	return <TokenContext.Provider value={tokenUser}>{children}</TokenContext.Provider>;
 };

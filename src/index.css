@@ -3,24 +3,24 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "Circular";
-    font-weight: 300;
-    src: url(./fonts/circular-light.woff2);
+	font-family: "Circular";
+	font-weight: 300;
+	src: url(./fonts/circular-light.woff2);
 }
 
 @font-face {
-    font-family: "Circular";
-    font-weight: 400;
-    src: url(./fonts/circular-medium.woff2);
+	font-family: "Circular";
+	font-weight: 400;
+	src: url(./fonts/circular-medium.woff2);
 }
 
 @font-face {
-    font-family: "Circular";
-    font-weight: 700;
-    src: url(./fonts/circular-bold.woff2);
+	font-family: "Circular";
+	font-weight: 700;
+	src: url(./fonts/circular-bold.woff2);
 }
 
 body {
-    font-family: "Circular";
-    background-color: #121212;
+	font-family: "Circular";
+	background-color: #121212;
 }

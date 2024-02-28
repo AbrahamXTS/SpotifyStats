@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { TokenContext } from "../providers";
 
 export const NoContent = () => {
+	const token = useContext(TokenContext);
+
 	return (
 		<div className="mt-10 text-center text-white">
-			<p>¡Inicia sesión para comenzar!</p>
-			<a href="https://github.com/abrahamxts" className="pt-5">Made with ❤️ by Abraham Espinosa</a>
+			{!token && <p>¡Inicia sesión para comenzar!</p>}
+			<a href="https://github.com/abrahamxts" className="block mb-10">
+				Made with ❤️ by Abraham Espinosa
+			</a>
 		</div>
 	);
 };
